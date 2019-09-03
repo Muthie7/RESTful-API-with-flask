@@ -41,7 +41,7 @@ class Item(Resource):
             item = ItemModel(name=name, **data)  # OR (name,data['price'], data['store_id'])
             return item.json()
         else:
-            item = ItemModel(data['price'], data['store_id'])
+            item = ItemModel(data['price'])
             return item.json()
             ##problem updating the price takes 1 positional arg
 
