@@ -12,7 +12,7 @@ class Store(Resource):
 
     def post(self, name):
         if StoreModel.find_by_name(name=name):
-            return {"message": f"store [{name}] already exist"}, 400
+            return {"message": "store already exist"}, 400
         else:
             store = StoreModel(name=name)
             try:
@@ -28,7 +28,7 @@ class Store(Resource):
             store.delete_from_db()
             return {"message": "Store has been deleted"}
         else:
-            return {"message": f"The store {name} doesn't exist"}, 400
+            return {"message": "The store  doesn't exist"}, 400
 
 
 class StoreList(Resource):
